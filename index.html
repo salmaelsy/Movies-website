@@ -1,0 +1,183 @@
+<html>
+
+<head>
+    <title>JS Exam</title>
+    <link rel="stylesheet" href="Style/bootstrap.min.css">
+    <link rel="stylesheet" href="Style/all.min.css">
+    <link rel="stylesheet" href="Style/style.css">
+</head>
+
+<body class="back-body">
+
+    <div id="loading" class=" position-absolute  top-0 bottom-0 end-0 start-0">
+        <i class="fa-solid fa-spinner fa-4x fa-spin  "></i>
+
+    </div>
+    <nav class="d-flex h-100 position-fixed top-0 bottom-0 ">
+        <div class="nav-options w-60 h-100 ">
+            <div class=" bg-dark  d-flex flex-column justify-content-between h-100">
+                <div>
+                    <ul class="list-unstyled p-5 ps-4 nav-op">
+                        <li class="mb-3"><a class="text-decoration-none fs-cu  nav-links" href="#" id="now_playing">Now
+                                Playing</a></li>
+                        <li class="mb-3"><a class="text-decoration-none fs-cu nav-links" href="#"
+                                id="popular">Popular</a>
+                        </li>
+                        <li class="mb-3"><a class="text-decoration-none fs-cu nav-links" href="#" id="top_rated">Top
+                                ralated</a></li>
+                        <li class="mb-3"><a class="text-decoration-none fs-cu nav-links" href="#"
+                                id="trending">Trending</a>
+                        </li>
+                        <li class="mb-3"><a class="text-decoration-none fs-cu  nav-links" href="#" id="upcoming">Up
+                                coming</a>
+                        </li>
+                        <li class="mb-3"><a class="text-decoration-none fs-cu nav-links" href="#contact">Contact us</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="ps-4 pb-3">
+                    <ul class="d-flex  list-unstyled justify-content-around flex-wrap w-40 ">
+                        <li> <a class="text-decoration-none  nav-links" href=""><i
+                                    class="fa-brands fa-facebook-f"></i></a></li>
+                        <li><a class="text-decoration-none  nav-links " href=""><i class="fa-brands fa-twitter"></i></a>
+                        </li>
+                        <li><a class="text-decoration-none  nav-links " href=""><i
+                                    class="fa-solid fa-globe mb-3"></i></a></li>
+
+                    </ul>
+                    <p class="text-muted  w-100 ">Copyright Â© 2019 All Rights Reserved.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="nav-header d-flex flex-column justify-content-between bg-light align-items-center px-1 py-4">
+            <div class="w-50">
+                <img src="Images/logo.png" class="w-100" alt="">
+            </div>
+            <i class="fa-solid fa-bars fa-2x " id="menu-bars"></i>
+            <i class="fa-solid fa-xmark w-50 ps-2 fa-2x" id="menu-close"></i>
+            <div class="w-50 ps-2 ">
+                <i class="fa-solid fa-globe mb-3"></i>
+                <i class="fas fa-share-alt "></i>
+            </div>
+
+        </div>
+
+
+
+    </nav>
+
+    <section>
+        <div class="container p-5">
+            <div class="row g-3 mb-5 ">
+                <div class="col-md-6">
+                    <input type="text"
+                        class="form-control text-center back-body fs-cu  border-0 border-bottom border-gray"
+                        placeholder="Get movies by word..." id="searchInMovies" onkeyup="search()">
+                </div>
+                <div class="col-md-6">
+                    <input type="text"
+                        class="form-control text-center back-body border-0 fs-cu  border-bottom border-bottom border-gray"
+                        placeholder="search..." id="apiSearch" onkeyup="Apisearch()">
+                </div>
+            </div>
+            <div class="row " id="show-data">
+                <div class="col-md-4  p-0  mb-3">
+                    <div class="contain position-relative  w-100 h-100 p-3 ">
+                        <img src="" alt="" class=" img-film img-fluid rounded">
+                        <div class=" position-absolute   start-0 bottom-0  end-0  details  text-center m-3">
+                            <div class=" text-center py-5">
+                                <h3 class="mt-5"></h3>
+                                <p class="fs-6"></p>
+                                <p> </p>
+                                <p> </p>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" onmouseover="">
+        <div class="container p-5 ">
+            <h2 class="text-light fw-light">ContactUs...</h2>
+
+            <form action="">
+                <div class="row mb-4 ">
+
+                    <div class="col-md-6 my-2">
+                        <input type="text"
+                            class="form-control text-center back-body border-0 border-bottom border-gray fs-cu  "
+                            placeholder="Enter Name" id="Name">
+                        <div class="bg-danger p-2" id="wrong-N">
+                            Name is not valid
+
+                        </div>
+                    </div>
+                    <div class="col-md-6  my-2">
+                        <input type="text"
+                            class="form-control text-center back-body border-0 border-bottom border-bottom border-gray fs-cu"
+                            placeholder="Enter Email" id="Email">
+                        <div class="bg-danger p-2" id="wrong-E">
+                            Please Enter Valid Email
+
+                        </div>
+                    </div>
+                    <div class="col-md-6 my-2">
+                        <input type="text"
+                            class="form-control text-center back-body border-0 border-bottom border-gray fs-cu "
+                            placeholder="Enter Phone" id="phone">
+                        <div class="bg-danger p-2" id="wrong-p">
+                            Please Enter The Right Number starting with 0 and overall is 11 numbers
+
+                        </div>
+
+                    </div>
+                    <div class="col-md-6 my-2">
+                        <input type="text"
+                            class="form-control text-center back-body border-0 border-bottom border-bottom border-gray fs-cu "
+                            placeholder="Enter Age" id="Age">
+                        <div class="bg-danger p-2" id="wrong-A">
+                            Please Enter Valid age from [10-99]
+
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <input type="text"
+                            class="form-control text-center back-body border-0 border-bottom border-gray fs-cu "
+                            placeholder="Enter Password" id="Password">
+                        <div class="bg-danger p-2" id="wrong-pass">
+                            Please Enter Valid Password
+
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <input type="text"
+                            class="form-control text-center back-body border-0 border-bottom border-bottom border-gray fs-cu "
+                            placeholder="Reenter Password" id="rePassword">
+                        <div class="bg-danger p-2" id="wrong-Re">
+                            Password does not Match
+
+                        </div>
+                    </div>
+
+                </div>
+                <button class="btn btn-outline-danger">Submit</button>
+            </form>
+        </div>
+
+
+    </section>
+
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/Main.js"></script>
+
+
+</body>
+
+</html>
