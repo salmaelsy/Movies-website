@@ -125,11 +125,11 @@ function displayMovies() {
       date = dataMovies[i].release_date;
     }
     temp += `   
-    <div class="col-md-4  p-0  mb-3" id="contain-${i}">
-    <div class="contain position-relative  w-100 h-100 p-3 " >
-        <img src="https://image.tmdb.org/t/p/w500/${dataMovies[i].poster_path}" alt="" class=" img-film img-fluid rounded" id="img-film-${i}" onmouseenter="Hover(${i})">
-        <div class=" position-absolute   start-0 bottom-0  end-0  details  text-center m-3" id="details-${i}">
-            <div class=" text-center py-5">
+    <div class="col-md-4  p-0 mb-3" >
+    <div class="contain position-relative  w-100 h-100 " >
+        <img src="https://image.tmdb.org/t/p/w500/${dataMovies[i].poster_path}" alt="Poster" class=" img-film w-100 rounded"  >
+        <div class=" position-absolute   start-0 bottom-0  end-0  details  text-center m-3" >
+            <div class=" text-center py-5 px-2">
             <h3 class="mt-5">${name}</h3>
             <p class="fs-6">${dataMovies[i].overview}</p>
             <p>rate:${dataMovies[i].vote_average} </p>
@@ -195,10 +195,10 @@ function search() {
       console.log("yes")
       temp += `   
         <div class="col-md-4  p-0  mb-3">
-        <div class="contain position-relative  w-100 h-100 p-3 ">
-            <img src="https://image.tmdb.org/t/p/w500/${dataMovies[i].poster_path}" alt="" class=" img-film img-fluid rounded" id="img-film-${i}" onmouseenter="Hover(${i})">
-            <div class=" position-absolute   start-0 bottom-0  end-0  details details-${i} text-center m-3">
-                <div class=" text-center py-5">
+        <div class="contain position-relative  w-100 h-100  ">
+            <img src="https://image.tmdb.org/t/p/w500/${dataMovies[i].poster_path}" alt="" class=" img-film w-100 rounded" >
+            <div class=" position-absolute   start-0 bottom-0  end-0  details  text-center m-3 ">
+                <div class=" text-center py-5 px-1">
                 <h3 class="mt-5">${name}</h3>
                 <p class="fs-6">${dataMovies[i].overview}</p>
                 <p>rate:${dataMovies[i].vote_average} </p>
@@ -227,26 +227,6 @@ async function Apisearch() {
   dataMovies = await response.json();
   dataMovies = dataMovies.results;
   displayMovies()
-
-
-
-}
-
-//animate of layer
-function Hover(i){
-
-  //make height = image height
-  let height = document.getElementById(`img-film-${i}`).height;
-    $(`#details-${i}`).css({'display':'block'}).animate({'height':height,'top':"0"},1000);
-
-    //if mouse leave
-    $(`#details-${i}`).mouseleave(function(){
-      $(`#details-${i}`).animate({'height':'0','top':"100%"},1000,
-      function(){
-        $(`#details-${i}`).css({'display':'none','height':'0'});
-      })
-      })
-
 
 
 

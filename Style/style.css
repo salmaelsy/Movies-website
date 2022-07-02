@@ -30,10 +30,25 @@ nav{
     color:var(--gray);
 }
 .details{
-    background-color:  var(--gray);
+    background-color: var(--gray);
+    overflow: hidden;
     height: 0;
-    display: none;
+    bottom: 0;
+    transition: 0.6s ease;
 }
+.img-film{
+    height: 100%
+}
+
+.contain:hover .details{
+    height: calc(100% - 5%)
+
+}
+.contain{
+    padding: 3%;
+}
+
+
 #wrong-p,#wrong-Re,#wrong-Pass,#wrong-A,#wrong-E,#wrong-N{
     display: none;
 }
@@ -56,4 +71,7 @@ body{
     justify-content: center;
     align-items: center;
     color: #fff;
+}
+.nav-op{
+    display: none;
 }
